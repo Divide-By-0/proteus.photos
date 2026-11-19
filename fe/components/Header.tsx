@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
+const DEMO_ENDPOINT = process.env.NEXT_PUBLIC_DEMO_ENDPOINT || 'https://proteus.zk.email/';
+
 export default function Header() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -36,7 +38,7 @@ export default function Header() {
               </Link>
             ))}
             <a
-              href="https://proteus-fhpu.onrender.com/"
+              href={DEMO_ENDPOINT}
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
@@ -89,7 +91,7 @@ export default function Header() {
               </Link>
             ))}
             <a
-              href="https://proteus-fhpu.onrender.com/"
+              href={DEMO_ENDPOINT}
               target="_blank"
               rel="noopener noreferrer"
               className="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
